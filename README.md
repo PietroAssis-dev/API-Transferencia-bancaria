@@ -48,9 +48,13 @@ Body (JSON):
   "valorBancario": 1000
 }
 
+```
 Listar contas:
 GET /bancario/contas
-[
+
+
+Resposta recebida:
+```bash
   {
     "id": 1,
     "nome": "Pietro Assis",
@@ -58,17 +62,23 @@ GET /bancario/contas
     "email": "pietro@email.com",
     "valorBancario": 800.0
   }
-]
+
+```
 
 ### Transferencia de valor
-http POST :8080/bancario/transferir idOrigem==1 idDestino==2 valor==200
+```
+{
+  "idOrigem": 1,
+  "idDestino": 2,
+  "valor": 200
+}
 
-
+respota: Transferência realizada com sucesso
 
 ---
 
+```
 ### 5. Próximos passos
-```markdown
 ## Próximos passos
 - Implementar histórico de transações
 - Adicionar autenticação com Spring Security
