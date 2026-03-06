@@ -2,39 +2,45 @@
 
 Aplicação desenvolvida em Spring Boot para simular operações bancárias, como criação de contas e transferências de valores entre contas.
 
-## Tecnologias
+## 2. Tecnologias
 - Java 25
 - Spring Boot 4.0.3
 - Spring Data JPA
 - PostgreSQL (ou H2 para testes)
 - Maven
 
-## Como rodar
+## 3. Como rodar
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seuusuario/projeto-bancario.git
+
+2. Configure o banco de dados no application.properties:
+   ```bash
+   
    spring.datasource.url=jdbc:postgresql://localhost:5432/projeto_bancario
    spring.datasource.username=seu_usuario
    spring.datasource.password=sua_senha
    spring.jpa.hibernate.ddl-auto=update
-
+3. Compile e rode
+   ```bash
    mvn spring-boot:run
-
+4. A aplicação estara disponivel em:
+   ```bash
    http://localhost:8080
 
   
 ---
 
 ### 4. Endpoints disponíveis
-```markdown
-## 📡 Endpoints
+
+### Endpoints
 
 ### Criar conta
 `POST /bancario/conta`
 
 Body (JSON):
-```json
+```bash
 {
   "nome": "Pietro Assis",
   "cpf": "12345678900",
@@ -42,7 +48,7 @@ Body (JSON):
   "valorBancario": 1000
 }
 
-### Listar contas:
+Listar contas:
 GET /bancario/contas
 [
   {
