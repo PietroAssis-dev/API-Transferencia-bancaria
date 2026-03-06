@@ -42,7 +42,8 @@ Body (JSON):
   "valorBancario": 1000
 }
 
-
+### Listar contas:
+GET /bancario/contas
 [
   {
     "id": 1,
