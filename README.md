@@ -73,7 +73,7 @@ Resposta recebida:
   "valor": 200
 }
 
-respota: Transferência realizada com sucesso
+resposta: Transferência realizada com sucesso
 
 ---
 
