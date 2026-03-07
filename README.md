@@ -85,8 +85,35 @@ localhost:8080/bancario/historico/1
 
 coloque isso caso ja tenha feito uma transferencia
 
+
+vc recebera algo como:
+
+[
+  {
+    "idContaDestino": 2,
+    "idContaOrigem": 1,
+    "idTransferencia": 1,
+    "offsetDateTime": "2026-03-06T23:14:22.731758-03:00",
+    "valorTransferido": 500
+  },
+  {
+    "idContaDestino": 2,
+    "idContaOrigem": 1,
+    "idTransferencia": 2,
+    "offsetDateTime": "2026-03-06T23:14:54.620801-03:00",
+    "valorTransferido": 500
+  },
+  {
+    "idContaDestino": 2,
+    "idContaOrigem": 1,
+    "idTransferencia": 3,
+    "offsetDateTime": "2026-03-06T23:15:08.892903-03:00",
+    "valorTransferido": 900
+  }
+]
+
+
 ```
-### 5. Próximos passos
 ## Próximos passos
 
 - Adicionar autenticação com Spring Security
