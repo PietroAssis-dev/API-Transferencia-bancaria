@@ -78,9 +78,17 @@ respota: Transferência realizada com sucesso
 ---
 
 ```
+
+### Historico de Transferencia: 
+```
+localhost:8080/bancario/historico/1
+
+coloque isso caso ja tenha feito uma transferencia
+
+```
 ### 5. Próximos passos
 ## Próximos passos
-- Implementar histórico de transações
+
 - Adicionar autenticação com Spring Security
 - Criar testes unitários e de integração
 
