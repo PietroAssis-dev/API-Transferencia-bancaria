@@ -2,18 +2,22 @@ package pietroassis.Projeto_Bancario.Services;
 
 import org.springframework.stereotype.Service;
 import pietroassis.Projeto_Bancario.Model.BancarioModel;
+import pietroassis.Projeto_Bancario.Model.TransferenciaModel;
 import pietroassis.Projeto_Bancario.Repository.BancarioRepository;
+import pietroassis.Projeto_Bancario.Repository.TransferenciaRepository;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 
 @Service
 public class BancarioServices {
     private final BancarioRepository bancarioRepository;
+    private final TransferenciaRepository transferenciaRepository;
 
-
-    public BancarioServices (BancarioRepository bancarioRepository){
+    public BancarioServices (BancarioRepository bancarioRepository, TransferenciaRepository transferenciaRepository){
         this.bancarioRepository = bancarioRepository;
+        this.transferenciaRepository = transferenciaRepository;
     }
 
 
@@ -47,6 +51,24 @@ public class BancarioServices {
 
         bancarioRepository.save(contaOrigem);
         bancarioRepository.save(contaDestino);
+
+
+        TransferenciaModel transferencia = new TransferenciaModel();
+        transferencia.setIdContaOrigem(idOrigem);
+        transferencia.setIdContaDestino(idDestino);
+        transferencia.setValorTransferido(valor);
+        transferencia.setOffsetDateTime(OffsetDateTime.now());
+        transferenciaRepository.save(transferencia);
+
+
+
+    }
+
+    public List <TransferenciaModel> historicoTransferencia(Long idConta){
+        return transferenciaRepository.findByIdContaOrigemOrIdContaDestino(idConta, idConta);
+
+
+
     }
 
 }

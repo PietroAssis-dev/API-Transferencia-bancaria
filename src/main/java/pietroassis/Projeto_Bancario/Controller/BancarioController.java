@@ -5,6 +5,7 @@ package pietroassis.Projeto_Bancario.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pietroassis.Projeto_Bancario.Model.BancarioModel;
+import pietroassis.Projeto_Bancario.Model.TransferenciaModel;
 import pietroassis.Projeto_Bancario.Services.BancarioServices;
 
 import java.util.List;
@@ -45,6 +46,11 @@ public class BancarioController {
 
         bancarioServices.transferir(idOrigem, idDestino, valor);
         return "Transferência realizada com sucesso";
+    }
+
+    @GetMapping("/historico/{idConta}")
+    public List<TransferenciaModel> historico(@PathVariable Long idConta){
+        return bancarioServices.historicoTransferencia(idConta);
     }
 
 
