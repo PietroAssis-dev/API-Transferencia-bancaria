@@ -13,7 +13,7 @@ Aplicação desenvolvida em Spring Boot para simular operações bancárias, com
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seuusuario/projeto-bancario.git
+   git clone https://github.com/PietroAssis-dev/projeto-bancario.git
 
 2. Configure o banco de dados no application.properties:
    ```bash
